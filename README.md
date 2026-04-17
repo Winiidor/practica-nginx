@@ -16,7 +16,6 @@ Para poder diferenciar qué servidor responde a cada petición, se ha modificado
 
 Ambos servidores funcionan correctamente y responden peticiones.
 <img width="820" height="142" alt="imagen" src="https://github.com/user-attachments/assets/cf4a6fdc-d14e-42e3-afce-56a86ca1253c" />
-<img width="806" height="222" alt="imagen" src="https://github.com/user-attachments/assets/e11e38b3-2fa9-4b62-87e0-8e850e8733d0" />
 <img width="524" height="161" alt="imagen" src="https://github.com/user-attachments/assets/76f750f6-5a3e-4110-a636-0cd514e44522" />
 
 Fase 3 — Volum compartit.
@@ -28,23 +27,23 @@ Resultado:
 Cualquier cambio en el contenido se refleja automáticamente en ambos servidores.
 
 Evidencia: ambos nodos muestran el mismo contenido.
+<img width="806" height="222" alt="imagen" src="https://github.com/user-attachments/assets/e11e38b3-2fa9-4b62-87e0-8e850e8733d0" />
 
 
-⚙️ Fase 4 — Proxy inverso y balanceo de carga
-
+Fase 4 — Proxy invers amb balanceig.
 Se ha añadido un contenedor Nginx como punto de entrada único al sistema.
-
 Se ha configurado como proxy inverso utilizando:
-
-upstream para definir los servidores backend
-proxy_pass para redirigir las peticiones
+- upstream para definir los servidores backend
+- proxy_pass para redirigir las peticiones
 
 El balanceo de carga se realiza mediante el algoritmo Round Robin (por defecto en Nginx).
 
 ✔️ Resultado:
 Las peticiones se distribuyen entre los dos servidores Apache.
 
-📸 Evidencia:
+Evidencia:
+<img width="524" height="161" alt="imagen" src="https://github.com/user-attachments/assets/76f750f6-5a3e-4110-a636-0cd514e44522" />
+
 
 Varias peticiones mostrando respuestas de distintos servidores
 Uso de curl o navegador para comprobar alternancia
